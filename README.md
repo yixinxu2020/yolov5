@@ -95,11 +95,6 @@ $ python3 train.py --img 416 --epochs 50 --data digitdata.yaml --weights yolov5l
 ### Hyperparameters
 YOLOv5 has about 25 hyperparameters used for various training settings. These are defined in yaml files in the /data directory. Better initial guesses will produce better final results, so it is important to initialize these values properly before evolving. If in doubt, simply use the default values, which are optimized for YOLOv5 COCO training from scratch.
 ```
-# Hyperparameters for COCO training from scratch 
- # python train.py --batch 40 --cfg yolov5m.yaml --weights '' --data coco.yaml --img 640 --epochs 300 
- # See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials 
-  
-  
  lr0: 0.01  # initial learning rate (SGD=1E-2, Adam=1E-3) 
  lrf: 0.2  # final OneCycleLR learning rate (lr0 * lrf) 
  momentum: 0.937  # SGD momentum/Adam beta1 
@@ -135,7 +130,7 @@ YOLOv5 has about 25 hyperparameters used for various training settings. These ar
 $ pip install wandb
 ```
 ## Testing
-### creat testyolo.yaml
+### Creat testyolo.yaml
 Creating testyolo.yaml to get the test datasets.
 ```
 train: /home/div/cv/hw2/yolov5/digit/images/train/
@@ -145,13 +140,12 @@ nc: 10
 
 names: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-### test model
+### Test model
 Using the trained model to pred the testing_data.
 ```
 $  python3 test.py --weight best.pt --data testyolov.yaml --img 416 --augment --task test --save-json
 ```
-And get the result, save it as csv file.
-### transform the test result
+### Transform the test result
 Transform the test result to suitable .json format.
 ```
 $ python3 tranjson.py
