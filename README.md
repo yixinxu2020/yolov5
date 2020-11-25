@@ -49,7 +49,7 @@ $ python3 classdataset.py
 ```
 After deviding, the training_data becomes like this:
 ```
-data
+digit
 +- images
 |	+- train 
 |		 image 1
