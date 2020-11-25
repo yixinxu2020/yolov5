@@ -130,18 +130,38 @@ YOLOv5 has about 25 hyperparameters used for various training settings. These ar
  mixup: 0.0  # image mixup (probability) 
  ```
 ### Plot the training_result
-Use the **plot.py** to plot the training_result
-
----training_data loss & acc, and validation_data loss & acc
+**Weights & Biases** (W&B) is now integrated with YOLOv5 for real-time visualization and cloud logging of training runs. This allows for better run comparison and introspection, as well improved visibility and collaboration among team members. To enable W&B logging install wandb, and then train normally (you will be guided setup on first use).
 ```
-$ python3 plot.py
+$ pip install wandb
 ```
 ## Testing
+### creat testyolo.yaml
+Creating testyolo.yaml to get the test datasets.
+```
+train: /home/div/cv/hw2/yolov5/digit/images/train/
+val: /home/div/cv/hw2/yolov5/digit/images/val/
+test: /home/div/cv/hw2/data/test/
+nc: 10
+
+names: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+### test model
 Using the trained model to pred the testing_data.
 ```
-$ python3 test_data.py
+$  python3 test.py --weight best.pt --data testyolov.yaml --img 416 --augment --task test --save-json
 ```
 And get the result, save it as csv file.
+### transform the test result
+Transform the test result to suitable .json format.
+```
+result.json
+[dict1, dict2, ..., dict13068]
+dict{“bbox”: list of bounding boxes in (y1, x1, y2, x2). (top,left,right,bottom)
+     “score”: list of probability for the class
+     “label”: list of label}
+```
+$ python3 tranjson.py
+```
 ## Submission
 Submit the test_result csv file, get the score.
 
