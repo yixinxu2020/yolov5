@@ -156,13 +156,11 @@ Transform the test result to suitable .json format.
 ```
 $ python3 tranjson.py
 ```
-```
 result.json
 [dict1, dict2, ..., dict13068]
 dict{“bbox”: list of bounding boxes in (y1, x1, y2, x2). (top,left,right,bottom)
      “score”: list of probability for the class
      “label”: list of label}
-```
 ## Submission
 Submit the test_result csv file, get the score.
 
