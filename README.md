@@ -51,19 +51,19 @@ After deviding, the training_data becomes like this:
 ```
 digit
 +- images
-|	+- train 
-|		 image 1
-|		 image 2 ... (total 30061 images)
-|	+- val	 	 
-|		 image 1
-|	 	 image 2 ... (total 3341 images )
+  +- train 
+    |  image 1
+    |  image 2 ... (total 30061 images)
+  +- val	 	 
+    |  image 1
+    |  image 2 ... (total 3341 images )
 +- labels
-|	+- train 
-|		 txt 1
-|		 txt 2 ... (total 30061 images)
-|	+- val	 	 
-|		 txt 1
-|	 	 txt 2 ... (total 3341 images )
+  +- train 
+    |  txt 1
+    |  txt 2 ... (total 30061 images)
+  +- val	 	 
+    |  txt 1
+    |  txt 2 ... (total 3341 images )
 ```
 Among them, the ratio of training_dataset to validation_dataset is 9:1.
 
