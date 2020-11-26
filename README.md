@@ -157,6 +157,12 @@ dict{“bbox”: list of bounding boxes in (y1, x1, y2, x2). (top,left,right,bot
      “score”: list of probability for the class
      “label”: list of label}
 ```
+### Speed benchmark
+Run the detect.py file to get the time of testing each image.
+```
+$ python3 detect.py --weights best.pt --img 320 --source data/images/ --augment
+```
+The time taken was about 56 ms per image.
 ## Submission
 Submit the test_result json file, get the score.
 
